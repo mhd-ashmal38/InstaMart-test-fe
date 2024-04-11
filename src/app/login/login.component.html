@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 justify-content-center align-items-center vh-100 login ">
+        <div class="text-center mb-4">
+            <h3>Welcome Back</h3>
+        </div>
+        <form class="w-100" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required="" formControlName="email">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <!-- error div -->
+            <div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched"
+            class="text-danger mb-2">Invalid email</div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required="" formControlName="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <!-- error div -->
+            <div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched"
+            class="text-danger mb-2">Invalid password</div>
+            <!-- Submit button -->
+            <div class="text-center"><button type="submit"n value="Login" class="btn btn-primary btn-block mb-4 w-50">Sign in</button></div>
+            
+        </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
